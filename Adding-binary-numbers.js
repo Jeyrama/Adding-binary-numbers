@@ -30,3 +30,24 @@ function add(a,b) {
 }
 
 // or
+
+function add(a,b){
+  let aa = a.split('');
+  let ba = b.split('');
+  let res = [];
+  let c = 0;
+  do {
+    a = aa.pop();
+    b = ba.pop();
+    res.unshift((+a ? 1 : 0) + (+b ? 1 : 0) + c);
+    c = 0;
+    if (res[0] > 1) {
+      res[0] -= 2;
+      c = 1;
+    }
+  } while(a || b);
+  if (c) {
+    res.unshift(1);
+  }
+  return res.join('').replace(/^0*/, '') || '0';
+};
