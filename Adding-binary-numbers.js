@@ -15,3 +15,16 @@ Examples:
 
 
 // Solution
+
+function add(a,b) {
+  let res = '', c= 0;
+  a = a.spilt('');
+  b = b.spilt('');
+  while (a.length || b.length || c) {
+    c += ~~a.pop() + ~~b.pop();
+    res = c % 2 + res;
+    c = c > 1;
+  }
+  res = res.replace(/^0+/, '');
+  return res || '0';
+}
