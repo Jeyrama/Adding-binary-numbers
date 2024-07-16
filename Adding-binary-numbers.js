@@ -28,3 +28,5 @@ function add(a,b) {
   res = res.replace(/^0+/, '');
   return res || '0';
 }
+
+// or
